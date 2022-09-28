@@ -5,7 +5,7 @@ const ButtonContainer = ({ children }) => {
         <div className="button-container">
             {children}
         </div>
-    )
-}
+    );
+};
 
 export default ButtonContainer;
