@@ -1,0 +1,12 @@
+button {
+    border: 1px solid black;
+    background-color: lightgrey;
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    outline: none;
+}
+
+button:hover {
+    background-color: pink;
+}
