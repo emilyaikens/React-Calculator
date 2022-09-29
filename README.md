@@ -20,6 +20,7 @@ It's a calculator
 ![calculator](https://i.imgur.com/DGAqjb8.png)
 
 ## Credits
+A huge thanks to:
 * Madars Biss (Sitepoint)
 * Stack Overflow
 
