@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 import Body from "./Body";
 import Display from "./Display";
 import ButtonContainer from "./ButtonContainer";
@@ -17,6 +17,13 @@ function App() {
 
   return (
     <div className="App">
+
+      const [calculation, setCalculation] = useState ({
+          sign: '',
+          num: 0, 
+          res: 0,
+          })
+
       <Body>
         <Display value="0" />
         <ButtonContainer>
