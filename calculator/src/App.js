@@ -5,6 +5,14 @@ import Display from "./Display";
 import ButtonContainer from "./ButtonContainer";
 import Button from "./Button";
 
+const buttonValues = [
+  ['AC', '±', '%', '÷'],
+  ['7', '8', '9', '×'],
+  ['4', '5', '6', '-'],
+  ['1', '2', '3', '+'],
+  ['0', '.', '=']
+]
+
 function App() {
 
   return (
@@ -12,8 +20,16 @@ function App() {
       <Body>
         <Display value="0" />
         <ButtonContainer>
-          <Button className="" value="0" 
-              onClick={() => {console.log("button clicked")}}/>
+          {buttonValues.flat().map((btn, i) => {
+              return (
+                <Button 
+                    key={i}
+                    className={btn === '=' ? 'equals' : ''}
+                    value={btn}
+                    onClick={() => {console.log("button clicked")}}/>
+              )
+          })}
+          
         </ButtonContainer>
       </Body>
     </div>

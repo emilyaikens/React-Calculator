@@ -1,6 +1,6 @@
 .button-container {
     width: 100%;
-    height: calc(100% - 110px);
+    height: 420px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
