@@ -134,7 +134,7 @@ function App() {
               return (
                 <Button 
                     key={index}
-                    className={button === '0' ? 'zero' : ''}
+                    className={button === '0' ? 'zero' : ''} //add to this so that the numbers are a different color than the rest of them
                     value={button}
                     onClick={
                       button === "AC"
