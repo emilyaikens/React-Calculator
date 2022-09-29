@@ -9,6 +9,18 @@ Hackathon Calculator to practice using React
 * Support decimal values
 * Support negative and positive values
 * Clear screen
-* Style UI to look like a basic Mac calculator build
+
+## Get Started
+* Not deployed yet, sorry! I promise it works though :) 
+
+## Screenshot
+
+It's a calculator
+
+![calculator](https://i.imgur.com/DGAqjb8.png)
+
+## Credits
+* Madars Biss (Sitepoint)
+* Stack Overflow
 
 
