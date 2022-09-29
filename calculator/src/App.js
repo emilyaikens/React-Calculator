@@ -30,17 +30,15 @@ function App() {
   const numClickHandler = (n) => {
     n.preventDefault();
     const value = n.target.innerHTML; //gets value from button
-    if (calculation.num.length < 16) {
-      setCalculation({
-        ...calculation, 
-        num: calculation.num === 0 && value === '0' 
-        ? '0' 
-        : calculation.num % 1 === 0
-        ? Number(calculation.num + value)
-        : calculation.num + value,
-        result: !calculation.sign ? 0 : calculation.result,
-      });
-    };
+    setCalculation({
+      ...calculation, 
+      num: calculation.num === 0 && value === '0' //if the start number is 0 but 0 is clicked, then it's 0
+      ? '0' 
+      : calculation.num % 1 === 0 
+      ? Number(removeSpaces(calculation.num + value)) //if it's not 0, don't put a 0 before it
+      : calculation.num + value, //add the existing numbers with the most recent captured value
+      result: !calculation.sign ? 0 : calculation.result, //the result will depend on the sign....
+    });
   };
 
   // this handler gets triggered when a decimal point is clicked. 
