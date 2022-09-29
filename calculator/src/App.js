@@ -7,7 +7,7 @@ import Button from "./Button";
 
 const buttonValues = [
   ['AC', '±', '%', '÷'],
-  ['7', '8', '9', '×'],
+  ['7', '8', '9', 'x'],
   ['4', '5', '6', '-'],
   ['1', '2', '3', '+'],
   ['0', '.', '=']
@@ -57,6 +57,25 @@ function App() {
     });
   };
 
+  // this handler basically does the math when the equals button is clicked
+  const equalsClickHandler = () => {
+    if (calculation.sign && calculation.num) {
+      const math = (a, b, sign) =>
+        sign === '+' ? a + b 
+        : sign === '-' ? a - b
+        : sign === 'x' ? a * b
+        : a / b;
+
+      setCalculation ({
+        ...calculation,
+        result: calculation.num === "0" && calculation.sign === '÷'
+        ? "No division by 0"
+        : math (Number(calculation.result), Number(Calculation.num), calculation.sign),
+        sign: '', //reset sign
+        num: 0, //reset number
+      })
+    }
+  }
 
   // ********** use state *********************************** //
   const [calculation, setCalculation] = useState ({
@@ -86,7 +105,7 @@ function App() {
                         ? percentClickHandler
                         : button === "="
                         ? equalsClickHandler
-                        : button === "÷" || button === "×" || button === "-" || button === "+"
+                        : button === "÷" || button === "x" || button === "-" || button === "+"
                         ? signClickHandler
                         : button === "."
                         ? dotClickHandler
