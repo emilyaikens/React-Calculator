@@ -22,7 +22,7 @@ Calculator app built to practice using React
 
 ## Get Started
 
-* [Click here to test it out!](https://emilys-calculator.netlify.app/)
+[Click here to test it out!](https://emilys-calculator.netlify.app/)
 
 ## Screenshot
 
