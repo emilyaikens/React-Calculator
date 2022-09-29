@@ -73,9 +73,31 @@ function App() {
         : math (Number(calculation.result), Number(Calculation.num), calculation.sign),
         sign: '', //reset sign
         num: 0, //reset number
-      })
-    }
-  }
+      });
+    };
+  };
+
+  //this handler changes from negative to positive and positive to negative
+  // when the ± button is clicked
+  const negposClickHandler = () => {
+    setCalculation ({
+      ...calculation,
+      num: calculation.num ? calculation.num * -1 : 0,
+      result: calculation.result ? calculation.result * -1 : 0,
+      sign: '',
+    });
+  };
+
+  const percentClickHandler = () => {
+    // parseFloat returns a floating point number
+    let num = calculation.num ? parseFloat(calculation.num) : 0;
+    let result = calculation.result ? parseFloat(calculation.result) : 0;
+    setCalculation({
+      ...calculation,
+      num: (num /= 100),
+      result: (result /= 100)
+    });
+  };
 
   // ********** use state *********************************** //
   const [calculation, setCalculation] = useState ({
@@ -100,7 +122,7 @@ function App() {
                       button === "AC"
                         ? resetClickHandler
                         : button === "±"
-                        ? invertClickHandler
+                        ? negposClickHandler
                         : button === "%"
                         ? percentClickHandler
                         : button === "="
