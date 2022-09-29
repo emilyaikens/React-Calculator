@@ -21,7 +21,8 @@ Calculator app built to practice using React
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ## Get Started
-* Not deployed yet, sorry! I promise it works though :) 
+
+* [Click here to test it out!](https://emilys-calculator.netlify.app/)
 
 ## Screenshot
 
