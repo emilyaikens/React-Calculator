@@ -5,6 +5,16 @@ import Display from "./Display";
 import ButtonContainer from "./ButtonContainer";
 import Button from "./Button";
 
+
+//This is a Regex strong posted by Emissary... I don't really know 
+//how it works, but it basically takes a number and formats it into a string
+//then creates the space separators. removeSpaces does the opposite?
+const toLocaleString = (num) =>
+  String(num).replace(/(?<!\..*)(\d)(?=(?:\d{3})+(?:\.|$))/g, "$1 ");
+
+const removeSpaces = (num) => num.toString().replace(/\s/g, "");
+//************************************************************************ */
+
 const buttonValues = [
   ['AC', '±', '%', '÷'],
   ['7', '8', '9', 'x'],
@@ -70,7 +80,7 @@ function App() {
         ...calculation,
         result: calculation.num === "0" && calculation.sign === '÷'
         ? "No division by 0"
-        : math (Number(calculation.result), Number(Calculation.num), calculation.sign),
+        : math (Number(calculation.result), Number(calculation.num), calculation.sign),
         sign: '', //reset sign
         num: 0, //reset number
       });
@@ -88,6 +98,8 @@ function App() {
     });
   };
 
+  //this handler should get a percentage of a number... not sure if this 
+  //works the way it should yet
   const percentClickHandler = () => {
     // parseFloat returns a floating point number
     let num = calculation.num ? parseFloat(calculation.num) : 0;
@@ -96,6 +108,14 @@ function App() {
       ...calculation,
       num: (num /= 100),
       result: (result /= 100)
+    });
+  };
+
+  //this handler clears everything and resets the calculation 
+  //state back to the beginning :) 
+  const clearClickHandler = () => {
+    setCalculation({
+      ...calculation, sign:'', num: 0, result: 0,
     });
   };
 
@@ -115,12 +135,12 @@ function App() {
           {buttonValues.flat().map((button, index) => {
               return (
                 <Button 
-                    key={i}
+                    key={index}
                     className={button === '0' ? 'zero' : ''}
-                    value={btn}
+                    value={button}
                     onClick={
                       button === "AC"
-                        ? resetClickHandler
+                        ? clearClickHandler
                         : button === "±"
                         ? negposClickHandler
                         : button === "%"
