@@ -10,3 +10,7 @@ button {
 button:hover {
     background-color: pink;
 }
+
+.zero {
+    grid-column: 1/3;
+}

@@ -24,7 +24,7 @@ function App() {
               return (
                 <Button 
                     key={i}
-                    className={btn === '=' ? 'equals' : ''}
+                    className={btn === '0' ? 'zero' : ''}
                     value={btn}
                     onClick={() => {console.log({btn})}}/>
               )
