@@ -1,7 +1,7 @@
 # React-Calculator
 
 ## Description
-Hackathon Calculator to practice using React
+Calculator app built to practice using React
 
 ## Requirements
 * Add, subtract, multiply and divide
