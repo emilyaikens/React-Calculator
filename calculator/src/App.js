@@ -26,7 +26,7 @@ function App() {
                     key={i}
                     className={btn === '=' ? 'equals' : ''}
                     value={btn}
-                    onClick={() => {console.log("button clicked")}}/>
+                    onClick={() => {console.log({btn})}}/>
               )
           })}
           
