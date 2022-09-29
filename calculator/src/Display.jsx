@@ -1,8 +1,11 @@
 import './Display.css';
+import {Textfit} from 'react-textfit';
 
 const Display = ({ value }) => {
     return (
-        <h1 className="display" max={70}>{value}</h1>
+        <Textfit className='display' mode='single' max={70}>
+            {value}
+        </Textfit>
     )
 }
 
