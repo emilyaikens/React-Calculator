@@ -15,25 +15,40 @@ const buttonValues = [
 
 function App() {
 
+  const [calculation, setCalculation] = useState ({
+    sign: '',
+    num: 0, 
+    result: 0,
+    })
+
   return (
+
     <div className="App">
-
-      const [calculation, setCalculation] = useState ({
-          sign: '',
-          num: 0, 
-          res: 0,
-          })
-
       <Body>
-        <Display value="0" />
+        <Display value={calculation.num ? calculation.num : calculation.result} />
         <ButtonContainer>
-          {buttonValues.flat().map((btn, i) => {
+          {buttonValues.flat().map((button, index) => {
               return (
                 <Button 
                     key={i}
-                    className={btn === '0' ? 'zero' : ''}
+                    className={button === '0' ? 'zero' : ''}
                     value={btn}
-                    onClick={() => {console.log({btn})}}/>
+                    onClick={
+                      button === "AC"
+                        ? resetClickHandler
+                        : button === "±"
+                        ? invertClickHandler
+                        : button === "%"
+                        ? percentClickHandler
+                        : button === "="
+                        ? equalsClickHandler
+                        : button === "÷" || button === "×" || button === "-" || button === "+"
+                        ? signClickHandler
+                        : button === "."
+                        ? commaClickHandler
+                        : numClickHandler
+                    }
+                  />
               )
           })}
           
