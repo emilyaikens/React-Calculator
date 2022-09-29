@@ -149,7 +149,7 @@ function App() {
                         ? signClickHandler
                         : button === "."
                         ? dotClickHandler
-                        : numClickHandler
+                        : numClickHandler //for the numbers
                     }
                   />
               )

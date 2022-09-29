@@ -1,10 +1,11 @@
 button {
     border: 1px solid black;
-    background-color: lightgrey;
-    font-size: 22px;
+    background-color: #f39c12;
+    font-size: 26px;
     color: white;
     font-weight: bold;
     outline: none;
+    border-radius: 5px;
 }
 
 button:hover {
